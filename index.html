@@ -1,0 +1,137 @@
+<!DOCTYPE html><html>
+<head>
+<title>camelCaseD</title>
+<style type="text/css">
+@font-face{font-family:icon;src:url('http://www.levien.com/type/myfonts/Inconsolata.otf')}body{background-color:black;color:white;font-family:icon}div{overflow:hidden;width:150ch}
+</style>
+<script type="text/javascript">function texttype(e, t, n, r, i) {
+    var s = ++window.textTyperID;
+    window.textTyper[s] = new function () {
+        var o = false;
+        this.init = function () {
+            var n = "";
+            for (var r = 0; r < t.length; r++) {
+                n += "<span style='display:none;'>" + t[r] + "</span>"
+            }
+            var i = document.createElement("span");
+            i.setAttribute("id", "pipe" + s);
+            i.textContent = "|";
+            i.style.marginLeft = "1px";
+            i.style.color = "white";
+            document.getElementById(e).innerHTML = n;
+            document.getElementById(e).appendChild(i);
+            window.textTyper[s].type(0);
+            window.textTyper[s].animatePipe(true)
+        };
+        this.type = function (u) {
+            var a = document.getElementById(e).childNodes;
+            if (u < t.length) {
+                var f = n - r / 2;
+                var l = n + r / 2;
+                var c = Math.floor(Math.random() * (f - l + 1) + l);
+                a[u].style.display = "inline";
+                setTimeout(function () {
+                    window.textTyper[s].type(++u);
+                    document.getElementById("pipe" + s).style.visibility = ""
+                }, c)
+            } else {
+                o = true;
+                document.getElementById("pipe" + s).style.visibility = "hidden";
+                if (i) i()
+            }
+        };
+        this.animatePipe = function (e, t) {
+            if (!e) document.getElementById("pipe" + s).style.visibility = "hidden";
+            else document.getElementById("pipe" + s).style.visibility = ""; if (!o) {
+                setTimeout(function () {
+                    window.textTyper[s].animatePipe(!e)
+                }, 500)
+            } else document.getElementById("pipe" + s).style.visibility = "hidden"
+        }
+    };
+    window.textTyper[s].init()
+}(function () {
+    window.textTyperID = 0;
+    window.textTyper = new Array
+})();
+var startRecov = function () {
+    var e = document.getElementById("console");
+    e.innerHTML = '<div id="welcome-msg"></div><div id="intro"></div><div id="bio"></div><div><pre style="font: 4px/2px monospace;" id="logo"></pre></div><div id="what"></div>';
+    texttype("welcome-msg", "Welcome!", 100, 100, function () {
+        texttype("intro", "I'm going to be your host while this mess is being fixed up.", 50, 200, function () {
+            texttype("bio", "You can call me Oasis. I'm an AI for when everything isn't working out on this server.", 100, 100, function () {
+                var e = ["@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@", "@@@@@@@@@@@@@@@@@@@'#@'::;#@@@'::;+@@@@@@@@@@@@':@@@@;....:#@@@@@@@@@@@@@@@@@@@@@@@@@@@;....,;#@@@@@", "@@@@@@@@@@@@@@@@@@@:':;##',+#,;+#+,;@@@@@@@@@@@':@@#.;@@@@;`+@@@@@@@@@@@@@@@@@@@@@@@@@@:'@@@#'.;@@@@", "@@@@@@@@@@@@@@@@@@@:,+@@@@+,:'@@@@#,+@@@@@@@@@@':@@.+@@@@@@##@@@@@@@@@@@@@@@@@@@@@@@@@@:'@@@@@@,:@@@", "@@@+,..,#@@+:..,+@@::@@@@@@::@@@@@@;;@@#,..:#@@':@;:@@@@@@@@@@#;,..;@@@+,..:#@@#,..:#@@:'@@@@@@@`#@@", "@@+.+@@+.#@'+@@+.+@:'@@@@@@;;@@@@@@':@#.+@@'.#@':@.+@@@@@@@@@@#'@@#:,@@.#@@''@#.+@@'.#@:'@@@@@@@;;@@", "@@`#@@@@@@@@@@@@+,@:+@@@@@@;'@@@@@@+:@.+@@@@;;@':@`@@@@@@@@@@@@@@@@@.#+,@@@@@@,+@@@@;:@:'@@@@@@@',@@", "@':@@@@@@@@@'::;'.@:+@@@@@@;'@@@@@@+:#.@@@@@#.@':@`#@@@@@@@@@@@+;::;.+@.:+@@@@`@@@@@#.@:'@@@@@@@':@@", "@;;@@@@@@@#.;+++;.@:+@@@@@@;'@@@@@@+:#`......,@':@,+@@@@@@@@@@:,+++'.+@@',.:@#`......,@:'@@@@@@@:;@@", "@',@@@@@@@:;@@@@@.@:+@@@@@@;'@@@@@@+:@`@@@@@@@@':@',@@@@@@@@@#.@@@@@,+@@@@@;,@`@@@@@@@@:'@@@@@@#`#@@", "@@`+@@@@#@:'@@@@'.@:+@@@@@@;'@@@@@@+:@,'@@@@@#@':@@,;@@@@@@''+.@@@@@`+@@@@@@.@,'@@@@@#@:'@@@@@#.'@@@", "@@+.'@@'.#+.+@#;,.@:+@@@@@@;'@@@@@@+:@#.;#@+.'@':@@@,,+@@+,,#@.;#@+,.+',+##::@#.;#@+.'@:;+++':.'@@@@", "@@@#:..:#@@+:.,'@;@'#@@@@@@++@@@@@@#'@@@;..:#@@+'@@@@+:..:+@@@@;..:#'#@+:.,'@@@@;..:#@@'::::;+@@@@@@", "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"].join("\n");
+                texttype("logo", e, 10, 1, function(){
+                	setTimeout(function() {
+                		texttype("what", "I just got a message from my system admin saying that this is the coming soon page for his website.", 100, 100);
+                	}, 1000*3);
+            	})
+        })
+    })
+});
+}
+window.onload = function () {
+    texttype("boot", ">>> Boot sequence started", 100, 100, function () {
+        texttype("p1-i", "<<< ", 10, 100, function () {
+            setTimeout(function () {
+                texttype("p2-i", "found boot.img", 10, 50, function () {
+                    texttype("p1-e", "** ", 1, 10, function () {
+                        setTimeout(function () {
+                            texttype("p2-e", "error parsing block 0x8fcb91", 1, 100, function () {
+                                texttype("top-sep", "----------------------------------------", 1, null, function () {
+                                    texttype("sep-msg", "attempting to rehash img", 20, 30, function () {
+                                        texttype("bottom-sep", "----------------------------------------", 1, null, function () {
+                                            setTimeout(function () {
+                                                texttype("top-error-sep", "////////////////////////////////////////", 1, null, function () {
+                                                    texttype("fail", "failed", 100, 100, function () {
+                                                        texttype("bottom-error-sep", "////////////////////////////////////////", 1, null, function () {
+                                                            texttype("recov-msg", "recovery booting", 100, 100, function () {
+                                                                setTimeout(function () {
+                                                                    document.getElementById("console").innerHTML = "";
+                                                                    startRecov()
+                                                                }, 2e3)
+                                                            })
+                                                        })
+                                                    })
+                                                })
+                                            }, 1e3 * 2)
+                                        })
+                                    })
+                                })
+                            })
+                        }, 500)
+                    })
+                })
+            }, 500)
+        })
+    })
+}
+</script>
+</head>
+<body>
+<div id="console">
+	<div id="boot">
+	</div>
+	<div style="padding-left:4ch">
+		<span id="p1-i"></span><span id="p2-i" style="color:yellow;"></span>
+	</div>
+	<div style="padding-left:5ch;">
+		<span id="p1-e"></span><span id="p2-e" style="color:red;"></span>
+	</div>
+	<div id="top-sep">
+	</div>
+	<div id="sep-msg">
+	</div>
+	<div id="bottom-sep">
+	</div>
+	<div id="top-error-sep">
+	</div>
+	<div id="fail">
+	</div>
+	<div id="bottom-error-sep">
+	</div>
+	<div id="recov-msg">
+	</div>
+</div>
+</body>
+</html>
